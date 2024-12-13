@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Emergency.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency</title>
+</head>
+<body>
+    <header>
+        <!-- Header content (if needed) -->
+    </header>
+    
+    <div class="banner">
+        <div class="content">
+            <h2><span>Emergency</span></h2>
+            <p>
+                Emergency is an upcoming Indian Hindi-language biographical action drama film directed and co-produced by Kangana Ranaut, based on a screenplay by Ritesh Shah and story written by Ranaut. Based on the Indian Emergency, it stars Ranaut as former Prime Minister of India, Indira Gandhi.
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="play">watch now
+            </a>
+        </div>
+    </div>
+    
+    <div class="trailer">
+        <video controls width="100%" height="100%">
+            <source src="Emergency.mp4" type="video/mp4">
+        </video>
+        <img src="images/close.png" alt="close" class="close" onclick="toggle();">
+    </div>
+    
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>

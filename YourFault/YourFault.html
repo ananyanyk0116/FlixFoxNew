@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="YourFault.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourFault</title>
+</head>
+<body>
+    <header>
+        <!-- Header content (if needed) -->
+    </header>
+    
+    <div class="banner">
+        <div class="content">
+            <h2><span>YourFault</span></h2>
+            <p>
+                The romance between Nick and Noah, now respectively starting university and a professional career, faces new hurdles, including a vindictive ex-girlfriend.
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="play">watch now
+            </a>
+        </div>
+    </div>
+    
+    <div class="trailer">
+        <video controls width="100%" height="100%">
+            <source src="YourFault.mp4" type="video/mp4">
+        </video>
+        <img src="images/close.png" alt="close" class="close" onclick="toggle();">
+    </div>
+    
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>

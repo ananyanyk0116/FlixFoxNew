@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Mufasa.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufasa</title>
+</head>
+<body>
+    <header>
+        <!-- Header content can be added here, if needed -->
+    </header>
+
+    <div class="banner">
+        <div class="content">
+            <h2><span>Mufasa</span></h2>
+            <p>
+                Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, 
+                the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="Play Mufasa trailer">
+                Watch Now
+            </a>
+        </div>
+    </div>
+
+    <div class="trailer">
+        <video class="trailer-video" controls height="100%" width="100%">
+            <source src="Mufasa.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="images/close.png" alt="Close trailer" class="close" onclick="toggle();">
+    </div>
+
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>

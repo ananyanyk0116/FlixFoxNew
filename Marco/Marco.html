@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Marco.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco</title>
+</head>
+<body>
+    <header>
+        <!-- Header content can be added here, if needed -->
+    </header>
+
+    <div class="banner">
+        <div class="content">
+            <h2><span>Marco</span></h2>
+            <p>
+                Marco is an upcoming Indian Malayalam-language neo-noir action thriller film produced by Shareef Muhammed 
+                under Cubes Entertainments and directed by Haneef Adeni. It is the spin-off of Adeni's 2019 film Mikhael. 
+                The film stars Unni Mukundan in the titular role, alongside an ensemble cast of Jagadish, Siddique, Anson Paul, Yukti Thareja, Riyaz Khan, Jinu Joseph, Sreejith Ravi and Kabir Duhan Singh.
+                 The music was composed by Ravi Basrur, while cinematography and editing were handled by Chandru Selvaraj and Shameer Muhammed.
+
+                Marco is scheduled to be released on 20 December 2024, coinciding with Christmas weekend, in Malayalam, alongside dubbed versions of Tamil, Telugu, Kannada and Hindi languages.o...
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="Marco trailer">
+                Watch Now
+            </a>
+        </div>
+    </div>
+
+    <div class="trailer">
+        <video class="trailer-video" controls height="100%" width="100%">
+            <source src="Marco.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="images/close.png" alt="Close trailer" class="close" onclick="toggle();">
+    </div>
+
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="BlackPanther.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Panther</title>
+</head>
+<body>
+    <header>
+        <!-- Header content (if needed) -->
+    </header>
+    
+    <div class="banner">
+        <div class="content">
+            <h2><span>Black Panther</span></h2>
+            <p>
+                Thousands of years ago, five African tribes war over a meteorite containing the metal vibranium. One warrior ingests a "heart-shaped herb" affected by the metal and gains superhuman abilities, becoming the first "Black Panther". He unites all but the Jabari Tribe to form the nation of Wakanda.
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="play">watch now
+            </a>
+        </div>
+    </div>
+    
+    <div class="trailer">
+        <video controls width="100%" height="100%">
+            <source src="BlackPanther.mp4" type="video/mp4">
+        </video>
+        <img src="images/close.png" alt="close" class="close" onclick="toggle();">
+    </div>
+    
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>

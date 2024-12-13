@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="AntMan.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntMan</title>
+</head>
+<body>
+    <header>
+        <!-- Header content (if needed) -->
+    </header>
+    
+    <div class="banner">
+        <div class="content">
+            <h2><span>AntMan</span></h2>
+            <p>
+                Hank Pym (Michael Douglas) recruits the talents of Scott Lang (Paul Rudd), a master thief just released from prison. Lang becomes Ant-Man, trained by Pym and armed with a suit that allows him to shrink in size, possess superhuman strength and control an army of ants.
+            </p>
+            <a href="javascript:void(0);" class="play" onclick="toggle();">
+                <img src="images/play.png" alt="play">watch now
+            </a>
+        </div>
+    </div>
+    
+    <div class="trailer">
+        <video controls width="100%" height="100%">
+            <source src="AntMan.mp4" type="video/mp4">
+        </video>
+        <img src="images/close.png" alt="close" class="close" onclick="toggle();">
+    </div>
+    
+    <script>
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            var video = document.querySelector('video');
+            
+            trailer.classList.toggle('active');
+            
+            if (!trailer.classList.contains('active')) {
+                video.pause();
+                video.currentTime = 0;  // Reset the video to the beginning when closing
+            }
+        }
+    </script>
+</body>
+</html>
